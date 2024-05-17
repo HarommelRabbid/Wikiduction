@@ -1,0 +1,28 @@
+.navbar {
+display: grid;
+float: left;
+padding-right: 5px;
+}
+.content {
+display: grid;
+padding-left: 5px;
+padding-bottom: 5px;
+padding-right: 15px;
+border-left: 1px solid;
+border-top: 1px solid;
+border-bottom:1px solid;
+}
+h1, h2 {
+margin-top: 5px;
+}
+.footer {
+font-size: 13px;
+padding-top: 1px;
+padding-left: 130px;
+}
+.logo {
+pointer-events: none;
+}
+textarea {
+  width: 100%;
+}

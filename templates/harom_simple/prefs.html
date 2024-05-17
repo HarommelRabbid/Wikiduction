@@ -1,0 +1,17 @@
+<title>Preferences - {{wikiname}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>{{wikiname}}</h1>
+<a href="/">Home page</a> - <a href="/allpages">All pages</a> - <a href="/random">Random page</a> | <a href="/create">Create new page</a>
+<b style="float: right;">Preferences</b>
+<hr>
+<h1>Preferences</h1>
+Your chosen theme will be reset once you delete your cookies.
+<form action="/preferences" method="post">
+        <input type="radio" id="harom_simple" name="theme" value="harom_simple"{% if theme == 'harom_simple' %} checked{% endif %}>
+        <label for="harom_simple">Harom Simple</label><br>
+        <input type="radio" id="standard" name="theme" value="standard"{% if theme == 'standard' %} checked{% endif %}>
+        <label for="standard">Standard</label><br>
+      <input type="radio" id="bootstrap1" name="theme" value="bootstrap1"{% if theme == 'bootstrap1' %} checked{% endif %}>
+        <label for="bootstrap1">Bootstrap/1</label><br>
+        <input type="submit" value="Save">
+    </form>
