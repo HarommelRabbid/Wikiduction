@@ -1,2 +1,0 @@
-'Snololo', created by:
-# Tabodiiii
