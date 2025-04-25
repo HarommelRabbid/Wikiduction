@@ -1,0 +1,110 @@
+    body {
+      font-family: Arial;
+    }
+    nav {
+      padding: 5px;
+    }
+    .mainbar {
+      background: linear-gradient(180deg, rgba(255,180,0,1) 0%, rgba(255,255,0,1) 100%);
+      color: white;
+      display: block;
+      padding: 6px;
+      border-radius: 5px 5px 0px 0px;
+    }
+    .mainbar a {
+      color: white;
+      text-decoration: none;
+      padding: 7px;
+    }
+    .mainbar a:hover {
+      background: linear-gradient(180deg, gray 0%, lightgray 100%);
+      cursor: pointer;
+    }
+    .secbar {
+      background: linear-gradient(180deg, lightgray 0%, gray 100%);
+      color: white;
+      display: block;
+      padding: 6px;
+      border-radius: 0px 0px 5px 5px;
+    }
+    .secbar a {
+      color: white;
+      text-decoration: none;
+      padding: 7px;
+    }
+    .secbar a:hover {
+      background: linear-gradient(180deg, yellow 0%, orange 100%);
+      cursor: pointer;
+    }
+    .mainbar .search {
+      float: right;
+      border: none;
+      padding: 2px;
+      margin: none;
+      border-radius: 2px;
+    }
+    .content {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      margin: 5px;
+      padding-bottom: 12px
+    }
+    h1, h2 {
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 10px;
+    }
+    h3, h4, h5, h6 {
+      margin-bottom: 10px;
+    }
+    .footer {
+      padding: 6px;
+      margin: 5px;
+      border: 1px solid lightgray;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+    button, input[type="submit"] {
+      background: linear-gradient(180deg, lightgray 0%, gray 100%);
+      color: white;
+      border: 1px solid gray;
+      border-style: solid;
+    }
+    button:hover, input[type="submit"]:hover {
+      background: linear-gradient(180deg, yellow 0%, orange 100%);
+      cursor: pointer;
+      border: 1px solid yellow;
+      border-style: solid;
+    }
+    button:active, input[type="submit"]:active {
+      background: linear-gradient(180deg, yellow 0%, orange 100%);
+      cursor: pointer;
+      border: 1px solid yellow;
+      border-style: solid;
+    }
+   textarea {
+     width: 98.8%;
+   }
+table {
+  background-color: lightgray;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  background: linear-gradient(180deg, lightgray 0%, gray 100%);
+  border: 1px solid lightgray;
+}
+td {
+  background: linear-gradient(180deg, white 0%, gray 100%);
+  border: 1px solid gray;
+}
+td:hover {
+  background: linear-gradient(180deg, yellow 0%, orange 100%);
+  cursor: pointer;
+}
+th:hover {
+  background: linear-gradient(180deg, orange 0%, yellow 100%);
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Preferences - {{wikiname}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/standard/style.css') }}">
+<body>
+<div class="navbar">
+<a href="/">
+<img class="logo" src="{{logo}}" width=125px />
+</a>
+<a href="/">Home page</a>
+<a href="/random">Random page</a>
+<a href="/allpages">All pages</a>
+<hr style="width: 100%;">
+<a href="/create">Create new page</a>
+</div>
+<b style="float: right;">Preferences</b>
+<br>
+<div class="content">
+    <h1>Preferences</h1>
+    Your chosen theme will be reset once you delete your cookies.
+    <form action="/preferences" method="post">
+        {% for theme, theme1 in themes %}
+        <input type="radio" id="{{theme1}}" name="theme" value="{{theme1}}"{% if theme1 == curr_theme %} checked{% endif %}>
+        <label for="{{theme1}}">{{theme}}</label><br>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+</div>
+<div class="footer">
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<title>Creating Page - {{wikiname}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>{{wikiname}}</h1>
+<a href="/">Home page</a> - <a href="/allpages">All pages</a> - <a href="/random">Random page</a> | <b>Create new page</b>
+<a style="float: right;" href="/preferences">Preferences</a>
+<hr>
+    <h1>Create a New Page</h1>
+    <form method="post" action="{{ url_for('create_page') }}">
+        <label for="title">Page Title:</label>
+        <br>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">Page Content:</label>
+        <br>
+        <textarea id="content" name="content" rows="10" required style="width: 100%;"></textarea>
+        <br>
+        <button type="submit">Create Page</button>
+    </form>

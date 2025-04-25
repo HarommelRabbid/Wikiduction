@@ -1,0 +1,1 @@
+print(python.as_attrgetter(obj).wikiname)

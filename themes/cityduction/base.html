@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% if title == wikiname %}
+<title>{{wikiname}}</title>
+{% else %}
+<title>{{title}} - {{wikiname}}</title>
+{% endif %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/cityduction/style.css') }}">
+<link href="{{ url_for('static', filename='styles/pygments/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav>
+<div class="mainbar">
+<a href="/">{{wikiname}}</a><a href="/random">Random page</a><a href="/allpages">All pages</a><input type="search" placeholder="Search" class="search"/>
+</div>
+<div class="secbar">
+{% if title == wikiname %}
+<a href="/edit">Edit page</a>
+{% else %}
+<a href="{{title}}/edit">Edit page</a>
+{% endif %}<a href="/create">Create new page</a><a href="/preferences">Preferences</a>
+</div>
+</nav>
+<div class="content">
+<h1>{{title}}</h1>
+{{content | safe}}
+</div>
+<div class="footer">This page was last modified on {{last_modified}}</div>
+<!-- <div style="float: right; padding: 6px;"> <img src="https://dokode.moe/media/88x31deco/xbox.jpg" /> <img src="https://dokode.moe/media/88x31deco/wii.gif" /> <img src="https://dokode.moe/media/88x31deco/css.gif" /> <img src="https://cyber.dabamos.de/88x31/resin-powered.gif" /></div> -->
+</body>
+</html>

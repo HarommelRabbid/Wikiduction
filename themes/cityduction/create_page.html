@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Creating new page - {{wikiname}}</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/cityduction/style.css') }}">
+</head>
+<body>
+<nav>
+<div class="mainbar">
+<a href="/">{{wikiname}}</a><a href="/random">Random page</a><a href="allpages">All pages</a><input type="search" placeholder="Search" class="search"/>
+</div>
+<div class="secbar">
+<a>Create new page</a><a href="/preferences">Preferences</a>
+</div>
+</nav>
+<div class="content">
+<h1>Create a New Page</h1>
+    <form method="post" action="{{ url_for('create_page') }}">
+        <label for="title">Page Title:</label>
+        <br>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">Page Content:</label>
+        <br>
+        <textarea id="content" name="content" rows="10" required style="width: 100%;"></textarea>
+        <br>
+        <button type="submit">Create Page</button>
+    </form>
+</div>
+<!-- <div class="footer">This page was last modified on {{last_modified}}</div> -->
+<!-- <div style="float: right; padding: 6px;"> <img src="https://dokode.moe/media/88x31deco/xbox.jpg" /> <img src="https://dokode.moe/media/88x31deco/wii.gif" /> <img src="https://dokode.moe/media/88x31deco/css.gif" /> <img src="https://cyber.dabamos.de/88x31/resin-powered.gif" /></div> -->
+</body>
+</html>

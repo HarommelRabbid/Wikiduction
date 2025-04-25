@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% if title == wikiname %}
+<title>{{wikiname}}</title>
+{% else %}
+<title>{{title}} - {{wikiname}}</title>
+{% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/standard/style.css') }}">
+<link href="{{ url_for('static', filename='styles/pygments/styles.css') }}" rel="stylesheet">
+<body>
+<div class="navbar">
+<a href="/">
+<img class="logo" src="{{logo}}" width=125px />
+</a>
+<a href="/">Home page</a>
+<a href="/random">Random page</a>
+<a href="/allpages">All pages</a>
+<hr style="width: 100%;">
+{% if title == wikiname %}
+<a href="/edit">Edit page</a>
+{% else %}
+<a href="{{title}}/edit">Edit page</a>
+{% endif %}
+<a href="/create">Create new page</a>
+</div>
+<a style="float: right;" href="/preferences">Preferences</a>
+<br>
+<div class="content">
+<h1>{{title}}</h1>
+{{content | safe}}
+</div>
+<div class="footer">
+This page was last modified on {{last_modified}}
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Editing {{page}} - {{wikiname}}</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/cityduction/style.css') }}">
+</head>
+<body>
+<nav>
+<div class="mainbar">
+<a href="/">{{wikiname}}</a><a href="/random">Random page</a><a>All pages</a><input type="search" placeholder="Search" class="search"/>
+</div>
+<div class="secbar">
+<a>Edit page</a><a href="/create">Create new page</a><a href="/preferences">Preferences</a>
+</div>
+</nav>
+<div class="content">
+<h1>Editing {{page}}</h1>
+<form method="POST">
+  <textarea name="content" rows="15" required>{{ content }}</textarea>
+  <br>
+  <input type="submit" value="Save"><button type="button" onclick="window.location.href='/{{page}}';">Cancel</button>
+</form>
+</div>
+<!-- <div class="footer">This page was last modified on {{last_modified}}</div> -->
+<!-- <div style="float: right; padding: 6px;"> <img src="https://dokode.moe/media/88x31deco/xbox.jpg" /> <img src="https://dokode.moe/media/88x31deco/wii.gif" /> <img src="https://dokode.moe/media/88x31deco/css.gif" /> <img src="https://cyber.dabamos.de/88x31/resin-powered.gif" /></div> -->
+</body>
+</html>

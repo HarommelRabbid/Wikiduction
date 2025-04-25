@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>{{title}} - {{wikiname}}</title>
+<link rel="stylesheet" href="{{url_for('static', filename='styles/vector/main.css')}}" media="screen" />
+<link rel="stylesheet" href="{{url_for('static', filename='styles/monobook/shared.css')}}" media="screen" />
+<link href="{{ url_for('static', filename='styles/pygments/styles.css') }}" rel="stylesheet">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Main_Page skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" >
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">{{title}}</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				{{content|safe}}
+
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<!--<li  id="pt-anonuserpage"><a href="/index.php?title=User:85.186.189.91" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">85.186.189.91</a></li>-->
+					<!--<li  id="pt-anontalk"><a href="/index.php?title=User_talk:85.186.189.91" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>-->
+					<li  id="pt-anonlogin"><a href="/preferences">Preferences</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><a><span>Page</span></a></li>
+					<!--<li  id="ca-talk"><a href="/index.php?title=Talk:Main_Page"  title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>-->
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a><span>Read</span></a></li>
+					{% if title == wikiname %}
+					<li id="ca-edit"><a href="/edit"><span>Edit</span></a></li>
+					{% else %}
+					<li id="ca-edit"><a href="{{title}}/edit"><span>Edit</span></a></li>
+					{% endif %}
+					<!--<li id="ca-history" class="collapsible "><a href="/index.php?title=Main_Page&amp;action=history"  title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>-->
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" value="" />
+		<input type='submit' name="query" class="searchButton" id="searchGoButton"	value="Go" />
+		<input type="submit" name="query" class="searchButton" id="mw-searchButton" value="Search" />
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url({{logo}}); background-size: 145px;" href="/"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal" id='p-Navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="/">Main page</a></li>
+					<li id="n-randompage"><a href="/random">Random page</a></li>
+					<li id="n-allpages"><a href="/allpages">All pages</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="/index.php?title=Special:WhatLinksHere/Main_Page" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="/index.php?title=Special:RecentChangesLinked/Main_Page" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="/index.php?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+									<li id="t-print"><a href="/index.php?title=Main_Page&amp;useskin=vector&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="/index.php?title=Main_Page&amp;oldid=64950" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on {{last_modified}}.</li>
+																							<!--<li id="footer-info-viewcount">This page has been accessed 1,328,444 times.</li>-->
+															</ul>
+															<!--<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="/index.php?title=Redump_Wiki:Privacy_policy" title="Redump Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="/index.php?title=Redump_Wiki:About" title="Redump Wiki:About">About Redump Wiki</a></li>
+																							<li id="footer-places-disclaimer"><a href="/index.php?title=Redump_Wiki:General_disclaimer" title="Redump Wiki:General disclaimer">Disclaimers</a></li>
+															</ul>-->
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a><img src="{{ url_for('static', filename='styles/button.gif') }}" height="31" width="88" /></a></li>
+											</ul>
+			<div style="clear:both"></div>
+		</div>
+<script src="{{ url_for('static', filename='js/monobook_vector/table.js') }}"></script>
+    </body>
+</html>

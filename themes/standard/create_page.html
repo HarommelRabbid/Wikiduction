@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Create page - {{wikiname}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/standard/style.css') }}">
+<body>
+<div class="navbar">
+<a href="/">
+<img class="logo" src="{{logo}}" width=125px />
+</a>
+<a href="/">Home page</a>
+<a href="/random">Random page</a>
+<a href="/allpages">All pages</a>
+<hr style="width: 100%;">
+<b>Create new page</b>
+</div>
+<a style="float: right;" href="/preferences">Preferences</a>
+<br>
+<div class="content">
+<h1>Create a New Page</h1>
+    <form method="post" action="{{ url_for('create_page') }}">
+        <label for="title">Page Title:</label>
+        <br>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">Page Content:</label>
+        <br>
+        <textarea id="content" name="content" rows="15" required></textarea>
+        <br>
+        <button type="submit">Create Page</button>
+    </form>
+</div>
+<div class="footer">
+</div>
+</body>
+</html>

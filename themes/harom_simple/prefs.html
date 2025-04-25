@@ -1,0 +1,15 @@
+<title>Preferences - {{wikiname}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>{{wikiname}}</h1>
+<a href="/">Home page</a> - <a href="/allpages">All pages</a> - <a href="/random">Random page</a> | <a href="/create">Create new page</a>
+<b style="float: right;">Preferences</b>
+<hr>
+<h1>Preferences</h1>
+Your chosen theme will be reset once you delete your cookies.
+<form action="/preferences" method="post">
+    {% for theme, theme1 in themes %}
+        <input type="radio" id="{{theme1}}" name="theme" value="{{theme1}}"{% if theme1 == curr_theme %} checked{% endif %}>
+        <label for="{{theme1}}">{{theme}}</label><br>
+    {% endfor %}
+        <input type="submit" value="Save">
+    </form>

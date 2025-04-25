@@ -1,0 +1,11 @@
+{
+  "name": "Wikiduction DemoWiki",
+  "logo": "https://wallpaperaccess.com/full/3410732.jpg",
+  "default_theme": "bootstrap1",
+  "main_page": "main",
+  "main_title": "default",
+  "logs": ["edits", "creations"],
+  "tz": "Europe/Paris",
+  "database_uri": "mysql://root:tt78900987@localhost/wiki",
+  "rawhtml": false
+}

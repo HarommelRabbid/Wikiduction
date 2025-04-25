@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Preferences - {{wikiname}}</title>
+<link rel="stylesheet" href="{{url_for('static', filename='styles/monobook/shared.css')}}" media="screen">
+<link rel="stylesheet" href="{{url_for('static', filename='styles/monobook/main.css')}}" media="screen">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Main_Page skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">Preferences</h1>
+	<div id="bodyContent">
+		<div id="contentSub"></div>
+		Your chosen theme will be reset once you delete your cookies.
+    <form action="/preferences" method="post">
+		{% for theme, theme1 in themes %}
+        <input type="radio" id="{{theme1}}" name="theme" value="{{theme1}}"{% if theme1 == curr_theme %} checked{% endif %}>
+        <label for="{{theme1}}">{{theme}}</label><br>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a>Special Page</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="preferences">preferences</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url({{logo}}); background-size: 145px;" href="/"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li><a href="/">Home page</a></li>
+				<li><a href="/allpages">All pages</a></li>
+				<li><a href="/random">Random page</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<!--<form action="" id="searchform">-->
+				<input type="hidden" name="title" value="Special:Search">
+				<input id="searchInput" title="Search Redump Wiki" accesskey="f" type="search" name="search">
+				<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists">&nbsp;
+				<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text">
+			<!--</form>-->
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li><a href="create">Create new page</a></li>
+				</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico"><a><img src="{{ url_for('static', filename='styles/button.gif') }}" height="31" width="88"></a></div>
+	<ul id="f-list">
+		<!-- <li id="privacy"><a href="/index.php?title=Redump_Wiki:Privacy_policy" title="Redump Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/index.php?title=Redump_Wiki:About" title="Redump Wiki:About">About Redump Wiki</a></li>
+		<li id="disclaimer"><a href="/index.php?title=Redump_Wiki:General_disclaimer" title="Redump Wiki:General disclaimer">Disclaimers</a></li>-->
+	</ul>
+</div>
+</div>
+</body></html>
