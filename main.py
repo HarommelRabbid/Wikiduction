@@ -144,6 +144,8 @@ def view_page(page):
     return abort(404)
 
 
+@app.route(f'/{wikiname}')
+@app.route(f'/{main_title if not main_title in ["", "default" , "wikiname", "page", "pagename", "pagetitle"] else ""}')
 @app.route(f'/{main_page}')
 def mainname():
   return redirect(url_for('main'))
@@ -314,7 +316,7 @@ def qr_code():
     buffered = BytesIO()
     img.save(buffered, format="PNG")
     qr_img_bytes = base64.b64encode(buffered.getvalue()).decode()
-    return f'<img src="data:image/png;base64,{qr_img_bytes}" />'
+    return f'<title>QR Code for {page}</title><img src="data:image/png;base64,{qr_img_bytes}" />'
 
 
 if __name__ == '__main__':
