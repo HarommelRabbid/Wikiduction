@@ -6,10 +6,12 @@ CONTENT_DIR = 'content'
 
 def save(page, content):
   filename = os.path.join(CONTENT_DIR, f"{page}.md")
-  with open(filename, 'w+') as file:
-    # THIS IS A PAIN IN THE FUCKING ASS HELP ME PLEASE COMPARE TEXT...
-    file.write(content)
-
+  if hashlib.sha512(load(page).replace('\n', ' ').replace('\r', '').encode(encoding='UTF-8')).digest() != hashlib.sha512(content.replace('\n', ' ').replace('\r', '').encode(encoding='UTF-8')).digest():
+    with open(filename, 'w+') as file:
+      file.write(content)
+      return None
+  else:
+    return False
 
 def load(page):
   filename = os.path.join(CONTENT_DIR, f'{page}.md')

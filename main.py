@@ -10,6 +10,8 @@ import json
 import sqlite3
 import hashlib
 import qrcode
+import base64
+from io import BytesIO
 
 from bleach.css_sanitizer import CSSSanitizer
 from lupa.lua54 import LuaRuntime
@@ -156,12 +158,12 @@ def mainname_edit():
 def edit_page(page):
   if request.method == 'POST':
     content = request.form.get('content', '')
-    webeditor.save(page, content)
-    flash('Edit saved successfully.', category="success")
-    rch = open("data/recentchanges.md", 'a')
-    rch.write(f"* Edited page '{page}' on {current_time}\n")
-    if "edits" in logs:
-        print(f"Edited page '{page}' on {current_time}")
+    if webeditor.save(page, content) is None:
+        flash('Edit saved successfully.', category="success")
+        rch = open("data/recentchanges.md", 'a')
+        rch.write(f"* Edited page '{page}' on {current_time}\n")
+        if "edits" in logs:
+            print(f"Edited page '{page}' on {current_time}")
     return redirect(url_for('view_page', page=page))
   else:
     if page in ["allpages", "random", "preferences", "create", "edit", "search", "login", "signup", "qrcode"]:
@@ -296,6 +298,23 @@ def preferences():
                          curr_tz=tz,
                          themes=all_themes,
                          timezones=available_timezones())
+
+@app.route('/qrcode', methods=['GET'])
+def qr_code():
+    page = request.args.get('page', '')
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=2
+    )
+    qr.add_data(f'{request.url_root}{page}')
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="blue", back_color="white")
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
+    qr_img_bytes = base64.b64encode(buffered.getvalue()).decode()
+    return f'<img src="data:image/png;base64,{qr_img_bytes}" />'
 
 
 if __name__ == '__main__':
